@@ -2,7 +2,7 @@
 
 import re
 
-string=r"@" #a raw string called "ha" desired to be matched
+string=r"@" #a raw string called "@" desired to be matched
 #raw strings don't escape anything which makes regular expression easier
 
 if re.match(string,"wun333@gmail.com"): 
