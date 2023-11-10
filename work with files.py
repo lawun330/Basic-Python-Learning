@@ -20,7 +20,7 @@ file.close() #close from that file
 #--"a" no yes yes no end
 #--"a+" yes yes yes no end
 
-#--** "MODE" + "b" means binary mode
+#--** "MODE" + "b" means binary mode for files with binary data (eg. images)
 #--**  "wb" means write in binary mode(suitable  for non-text files)/ "rb" means read in binary
 #------------------------------------------------------------------------
 
@@ -38,7 +38,8 @@ file.close()
 
 print("________restart_______")
 file=open("C:\\Users\\user\\Desktop\\a.txt", "r") 
-print(file.readlines()) #read by lines and stored as list 
+print(file.readlines()) # read all lines and stored as list 
+# print(file.read()) # read a single line
 file.close()
 print("'-----ENDED-----'")
 
@@ -53,12 +54,12 @@ for line in file :
 #Write function  #using "w" ALWAYS RESET the STRING
 #===============================================
 file=open("C:/Users/user/Desktop/b.txt","w")
-s=file.write("Chase fine girl and sip on henn YOU GIVE ME THAT\nI'LL BE GOOD for a while\n") #write strings #assign new variable
+s=file.write("Watche me take a good thing and\nfucked it all up in one night.\n") #write strings #assign new variable
 print("The BYTE is",s) #return byte #that byte is equal to len("written string")
 file.close()
 
-#>>with<<< Keyword and >>as<<
-#==========================
+#>>with<<< Keyword and >>as<< (known as "context manager")
+#============================
 with open("C:/Users/user/Desktop/b.txt","r+") as filo:  #auto close file after done
     print(filo.read())
     filo.write("GOOD FOR A WHILE")
@@ -66,14 +67,18 @@ with open("C:/Users/user/Desktop/b.txt","r+") as filo:  #auto close file after d
 
 
 
-
-
-
-
 #THE COMPLETE FORMS-
 #**********VariableNamesForFile=open("dir\\filename.format","MODE")
-#**********AssignedVariable.read(number of bytes)
+#**********AssignedVariable.read(number of bytes/number of characters)
 #**********AssignedVariable.readlines()
+#**********AssignedVariable.readline()
 #**********AssignedVariable.write("The string to be written")
 #**********with open("dir/filename.format")as VariableNamesForFile: AssignedVariable.read()   
 #**********AssignedVariable.close()
+
+
+# return the index position in the current file
+# f.tell() 
+
+# change the starting position with 'x' as an index
+# f.seek(x) 

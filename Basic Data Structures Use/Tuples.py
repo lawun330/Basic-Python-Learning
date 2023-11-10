@@ -8,12 +8,14 @@ sand="Garra","Sasori"
 print(leaf[2],"fights",sand[0])
 
 #calling whole tuple 
-print(leaf,'\n')
+print(leaf)
 
 #print empty tuple and empty string
+print('====')
 mist=()
 rain=''
-print(rain,mist,'\n') 
+print(rain,mist) 
+print('====','\n')
 
 #slicing
 leaf2=leaf[1:] #VarName[start:end+1]
@@ -26,9 +28,9 @@ print(hokage,'and',rogue_ninja,'without',useless)
 
 #swaping data
 hokage, rogue_ninja, useless = rogue_ninja, hokage, useless 
-print(hokage,'and',rogue_ninja,'without',useless)
+print(hokage,'and',rogue_ninja,'without',useless,'\n')
 
-#tuple with asterisk (*)
+#tuple with asterisk (*) takes many values as possible
 a, b, c, *d, e= (1, 2, 3, 4, 5, 6, 7, 8)
 print(*d)
 #as *arg in function parameter

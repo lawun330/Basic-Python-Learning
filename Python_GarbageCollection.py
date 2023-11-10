@@ -23,6 +23,9 @@ a=67   #ref count for a=42 is 0 #ref count for a=409 is 0 #ref count for a=67 is
 
 import gc  #garbage collection module for controlling it
 gc.get_threshold() #returns (700,10,10) in shell  #meaning 700 occurences and python will run its garbage collection
+'''Python consists of three generations. Each generation has a certain threshold number of objects that it can allow. 
+A new object starts its life in the first generation of the garbage collector. 
+If Python executes a manual garbage collection process on a generation and an object survives, it moves up into a second, older generation.'''
 #--------------------------
 
 
@@ -33,6 +36,7 @@ class CarWheels:
 		self.wheels=w
 
 b=CarWheels(4) #ref count of object b is 1 
+print(b.wheels)
 print("b memory location :",hex((id(b))))
 
 import weakref #weak reference module

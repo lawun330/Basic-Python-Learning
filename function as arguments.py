@@ -17,15 +17,15 @@ print('\n')
 
 #function and uncontrolled or varying number of arguments
 
-def func4(parameter1,*Xparameter):
-	print(parameter1,'+',Xparameter)
+def func4(parameter1,*Xparameters):
+	print(parameter1,'+',Xparameters)
 
 func4('arg1','arg2','arg3','arg4','arg5') 
-#when arguments are much greater than parameters, the remaining args are stored in *para_name as in tuple arg for later purpose
+#when arguments are much greater than parameters, the remaining args are stored in *paras as in tuple
 
 #compared it to tuple
 a, b, c, *d, e= (1, 2, 3, 4, 5, 6, 7, 8)
-print(*d,'\n')
+print(*d,'\n') #*d has 4 values
 ###################################################
 
 #default values in function
@@ -34,7 +34,7 @@ def func5(x,y,name='haha'):
 	print(x,name,y)
 
 func5(4,'LOLs') #if no args are put, default value is returned
-func5(4,'LOLs',name='hehe') #arg is put and return that arg
+func5(4,'LOLs',name='hehe') #arg is put and the origin arg is changed
 
 #compared it to class
 class Class():

@@ -33,37 +33,38 @@ word2='myths'
 if re.search(pattern3,word1):
 	print(word1,"contains vowels and plural")
 else :
-	print(word1,"is no vowels or not plural")
+	print(word1,"neither has vowel nor plural")
 
 if re.search(pattern3,word2):
 	print(word2,"contains vowels and plural\n")
 else :
-	print(word2,"is no vowels or not plural\n")
+	print(word2,"neither has vowel nor plural\n")
 
 pattern4=r"[0-9]" 
 #[0-9][3-5] = numbers between 03 to 95
-#[A-Z]{3} = 3 consecutive capitals (has to be between 'A' to 'Z') (start-end) as range)
+#[A-Z]{3} = 3 consecutive capitals (has to be between 'A' to 'Z') (start-end) {x} as range
 #[a-t] = 1 small letter between 'a' to 't'
 #[A-Za-z] = any alphabet of any case
 #[a-z]{2}[A-Z][a-z]{2} = two lower case, one upper case, two lower case
 address=input('address containing no - ')
 if re.search(pattern4,address):
-	print('address contains numbers\n')
+	print('address does have numbers\n')
+else:
+	print('address no. missing!\n')
 
 pattern5=r"[^A-Z]"
 #using ^ inside bracket is not same as above case, it means exclude everything that followed after it
 #[^A-Z] any character,number is allowed, exclude the capitals
 letter='IMYOURS'
 if re.search(pattern5,letter):
-	print('Other than upper case')
-else : print ('upper case found')
-print('\n')
+	print('Other than upper case\n')
+else : print ('upper case found\n')
 ###################################
 
 #more metacharacters
-#repetition qualifiers
+#Repetition qualifiers
 
-pattern6=r'egg(spam)*'
+pattern6=r'(egg)(spam)*'
 #* zero or more #same as {0,} #same as {,}
 #+ one or more #same as {1,}
 #? zero or one #same as {0,1} #same as {,1}
@@ -71,10 +72,10 @@ pattern6=r'egg(spam)*'
 #numeric repeatition qualifiers
 #{X} repeat exactly X times
 #{X,} repeat exactly X times or more
-#{X,Y} repeat exactly X times, not more than Y # between X and Y repeatitions
+#{X,Y} repeat exactly X times, not more than Y # between X and Y repetitions
 
 #(previous thing)* = zero or more repetitions of previous thing
-#previous thing = can be a single character, a class, a group of characters in parentheses
+#where "previous thing" can be a single character, more than a single character, a group of characters in parentheses
 # this example matches string starting with 'egg' and having zero or more 'spam's
 if re.search(pattern6,'egg'):
 	print('True')
@@ -82,8 +83,9 @@ if re.search(pattern6,'egg'):
 if re.search(pattern6,'eggspamegg'):
 	print('True again')
 
-if re.search(pattern6,'spam'): #this won't be printed
+if re.search(pattern6,'spam'): #this is false because there is no * after egg. eg. r'(egg)*(spam)*'
 	print('True again again')
+print()
 
 #another example
 pattern7=r'colo(u)?r' #zero or one occurence of (thing) # thing = 'u' in here
@@ -95,17 +97,16 @@ if re.search (pattern7,'colour'):
 
 if re.search (pattern7,'colouur'): #this won't be printed
 	print('correct spelling again again') 
-print('
-      n')
+print()
 #r".*9{1-3}$" means any character(. represents) of zero or more repeatitions (* represents) and after that, one to three 9s (9{1-3}) at the end ($ represents)
 ####################################
 
 
 #groups 
-#this is a group - (u) and (spam) as in line 63 and 84
+#this is a group - (u) and (spam) as in line 91 and 67
 
 pattern8= r"a(bc)(de)(f(g)h)i"
-
+#NOTICE re.match()
 match = re.match (pattern8,'abcdefghijklmnop')
 #group(n) returns the n-th term 
 if match:
@@ -118,14 +119,14 @@ if match:
 	#print(match.group(5)) >>> Index error for 'n' group where match.group(n+1)
 	print(match.groups(),'\n') #return all groups in tuples
 	
-pattern9 = r'(?P<name>teacher)(?:children)(parent)'
+pattern9 = r'(?P<the_job>teacher).*(?:children).*(parent)'
 #(?<any_name>matching_char) #giving a group a name
 #(?:NON_matching_char) #this is non-capturing group meaning this group is avoided for capturing
-match2 = re.match (pattern9,'teacherchildrenparent')
+match2 = re.match (pattern9,'teacher eats children and parent')
 #NOTE non capturing group has to be matched too like regular expression
 #It is just that they cannot be called or captured
 if match2:
-	print(match2.group('name'),'=',match2.group(1)) #group(1)
+	print(match2.group('the_job'),'=',match2.group(1)) #group(1) can be also called by group name
 	print(match2.group(2)) #return parent because children is non capturing group
 	print(match2.groups()) #return 2 capturing groups
 
@@ -133,14 +134,14 @@ if match2:
 example=r'(a)(b(?:c)(d)(?:e))?'
 A=re.match(example,'abcde')
 if A:	
-	print('example-',A.groups())
-print('\n')
+	print('example-',A.groups()) #(c) and (e) are not not captured
+print()
 ######################################
       
 #escape character '\' backslash
 #used when we want to match the actual dot "." and not to confuse with wildcard dot
-print(re.search(r'\.com','www.google.com'))
-
+if re.search(r'\.com','www.google.com'):
+	print("It's a website.\n")
 ######################################
       
 #metacharacter '|' refers to 'OR'

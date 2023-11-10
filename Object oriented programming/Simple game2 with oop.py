@@ -10,7 +10,7 @@ class Gameobj:
 		self.name=name
 		Gameobj.objects[self.class_name]=self 
 
-#{"Horny_ghost":Ghost}
+#{"Horny_ghost":Ghost('MM')}
 
 class Ghost(Gameobj):
 	def __init__(self,name):
@@ -21,13 +21,13 @@ class Ghost(Gameobj):
 
 	@property
 	def desc(self):
-		indicator="She's angry. Available count-{}\n".format(self.health)
+		indicator="She's angry. Available count: {}\n".format(self.health)
 		if self.health >=5:
 			return self._desc
 		elif self.health ==2:
-			indicator="She seems ignoring. Available count-{}\n".format(self.health)
+			indicator="She seems ignoring. Available count:{}\n".format(self.health)
 		elif self.health ==1:
-			indicator="She's smiling. Available count-{}\n".format(self.health)
+			indicator="She's smiling. Available count:{}\n".format(self.health)
 		elif self.health<=0:
 			indicator="She's satisfied and you're saved.\n"
 
@@ -43,7 +43,8 @@ def touch(Noun):
 	msg="There's no {} here.\n".format(Noun)
 	if Noun in Gameobj.objects:
 		thing=Gameobj.objects[Noun]
-		if type(thing)==Ghost: #if {"Horny_ghost":Ghost} == {"Horny_ghost":thing}  >>> Ghost==thing
+		if type(thing)==Ghost: #if {"Horny_ghost":Ghost} == {"Horny_ghost":thing}  >>> Ghost==thing 
+		#this is done in case there are more key-class_val to dictionary
 			thing.health=thing.health-1	#Ghost.health-=1
 			if thing.health<=0:
 				msg="You've satisfied the ghost.\n"

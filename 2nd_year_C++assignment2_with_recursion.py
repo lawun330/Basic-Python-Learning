@@ -12,7 +12,7 @@ def is_odd(x):
 	return not is_even(x)
 
 for i in range(10):
-	x=int(input("enter the number up to 498 :"))
+	x=int(input("enter 10 numbers up to 498 :"))
 	is_even(x)
 	is_odd(x)
 	if is_even(x):even+=1

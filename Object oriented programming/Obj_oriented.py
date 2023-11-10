@@ -60,6 +60,7 @@ tom=Cat('Tom','blue')	#inserting the name tom with 2 arguments in class Cat whic
 
 print(tom.name,tom.color)
 tom.purr()
+tom.bark() #if there is no same function rewritten (eg. bark() is in Animal class and Dog subclass), the main class function runs
 print('\n')
 ############################
 
@@ -101,10 +102,9 @@ print(C.__bases__) #the base of C() is B()
 print(B.__bases__) #the base of B() is A()
 print(A.__bases__) #the base of A() is alphabet()
 print(alphabet.__bases__) #this is the base #returns the <class 'object'>
-
+print()
 #circular inheriting is impossible
 ############################
-
 
 
 #magic method #operator overloading
@@ -175,6 +175,7 @@ fir=operations(3,6)
 sec=operations(2,4)
 total=fir+sec  #add the class' objects using __add__(magic method)
 print(total)
+print()
 
 #more uses of magic methods
 class SpecialStr:
@@ -187,17 +188,17 @@ class SpecialStr:
 		#returning 3 values, '--' is joined after each value
 
 	def __gt__(self,other):
-		for i in range(len(other.string)+1): #range(13) /13 loops/ 13 iterations
+		for i in range(len(other.string)+1): #range(15+1) /16 loops/ 16 iterations
 			ans=other.string[:i]+'*'+self.string  #cut the string [from start : to i-th char]
 			ans+='*'+other.string[i:]				#[from i-th char : to end]
 			print(ans,i)
 
-sex=SpecialStr('eating donaut')
-baby=SpecialStr('killing insects')
+mommy=SpecialStr('eating donaut') #len() = 13
+baby=SpecialStr('killing insects') #len() = 15
 
-print(sex/baby) # / is equal to __truediv__(s,o) #method calling
-
-sex>baby #recall the method __gt__
+print(mommy/baby) # / is equal to __truediv__(s,o) #method calling
+mommy>baby #recall the method __gt__
+print()
 
 #more magic methods
 
@@ -212,10 +213,10 @@ sex>baby #recall the method __gt__
 #-------------> __name__ variable is set to __main__ if module is not imported otherwise it is set to the imported module name
 #-------------> __main__ refers to the main module i.e,executed file is not imported from another module or file
 #-------------> __doc__ returns the documentation in class or function
-#-------------> __module__ module name in which class is defined (__main__ in interactive mode) (as line 197,198)
-#-------------> __bases__  (line 92)
+#-------------> __module__ module name in which class is defined (__main__ in interactive mode)
+#-------------> __bases__  (line 101)
 #-------------> __all__ - a list of strings (each can be a name of variable) to be exported when --> from <module> import * <-- is used. eg. pi from math
-#-------------> __dict__ dictionary containing class' namespace (line 231)
+#-------------> __dict__ dictionary containing class' namespace (line 252)
 #-------------> __repr__ for string representation of the instances
 import random
 
@@ -233,9 +234,9 @@ class  vaguelist:
 
 	def __delitem__(self,index):
 		del self.context[index]
-		print (self.context[index])
+		return self.context[index]
 
-List=vaguelist(["A","B","Car",9]) #the whole list is set , not individual (as line 230)
+List=vaguelist(["A","B","Car",9]) #the whole list is set , not individual
 
 print(len(List))	#len() is calls to __len__
 print(len(List))
@@ -250,7 +251,6 @@ print(List.context)
 #namespaces are eg- '__init__','__getitem__','__len__','__delitem__' .,etc 
 print(vaguelist.__dict__) #key is namespace of class and value is that method of the namespace
 
-
 if __name__=='__main__':
 	print ('File is running directly\n')
 
@@ -262,8 +262,8 @@ if __name__=='__main__':
 
 #data hiding
 
-class YourName:
-	__myanmar='Lawun'  #double underscores are strongly private
+class CountryName:
+	__myanmar='Burmese'  #double underscores are strongly private
 	__asList=__myanmar.split(' ')
 	def __init__(self,age):
 		self._age=age #single underscore is weakly private
@@ -271,17 +271,17 @@ class YourName:
 	def Name(self):
 		print(self.__myanmar)
 
-me=YourName(18)
+mm=CountryName(18)
 
 #can access single underscore datas #_variables cannot be used with --> from module import * <--
-print(me._age) #print age
+print(mm._age) #print age
 
 #ways to access double underscores datas
-me.Name() #same as print(me._YourName__myanmar)
-print(me._YourName__asList) #print in list 
+mm.Name() #same as print(me._CountryName__myanmar)
+print(mm._CountryName__asList) #print in list 
 
 try:
-	print(me.__myanmar)  #raise attribute error because data is private
+	print(mm.__myanmar)  #raise attribute error because data is private
 except AttributeError :
 	print('Error jumped')
 
@@ -293,7 +293,7 @@ except AttributeError :
 
 class R3ctangle:
 	
-	side=4 #class attribute (goto line 310)
+	side=4 #class attribute (goto line 315)
 
 	def __init__(self,width,height):
 		self.width=width
@@ -318,7 +318,7 @@ rectangleA1=R3ctangle(2,4) #instance of a class, passed to the self parameter an
 
 #class method is called by class, passed to the cls parameter
 
-print('A1 %d A2 %d A3 %d\n'% (rectangleA1.Area(),R3ctangle.area(2,4),R3ctangle.AREA(2,4)))
+print('A1: %d, A2: %d, A3: %d\n'% (rectangleA1.Area(),R3ctangle.area(2,4),R3ctangle.AREA(2,4)))
 
 #differences
 
@@ -345,7 +345,7 @@ class Num:
 binary=Num()
 print(binary.fixed_num)	#normally it is binary.fixed_num() but here '()' is unnecessary
 #it looks like a variable but still it is a function but it can be read-only 
-#NOT AVAILABLE to change as usual and you don't need '()' 
+#NOT AVAILABLE to change as usual and you don't need '()' because of @property
 
 #trying to change the data as usual
 try: 

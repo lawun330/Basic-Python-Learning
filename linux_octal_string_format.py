@@ -16,6 +16,7 @@ def octal_to_string(octal):
     return result
     
 print(octal_to_string(755)) # Should be rwxr-xr-x
-print(octal_to_string(644)) # Should be rw-r--r--
-print(octal_to_string(750)) # Should be rwxr-x---
-print(octal_to_string(600)) # Should be rw-------
+# print(octal_to_string(644)) # Should be rw-r--r--
+# print(octal_to_string(750)) # Should be rwxr-x---
+# print(octal_to_string(600)) # Should be rw-------
+

@@ -7,4 +7,3 @@ def shorterString(x,y):
         return x
     else :
         return y
-    

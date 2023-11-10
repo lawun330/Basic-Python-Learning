@@ -34,6 +34,7 @@ class TheClassName
 #function and variable should be lowercase with underscores eg. 
 def function_name():
 	variable_of_this=''
+	pass
 
 #constants are uppercase with underscores eg. 
 SPEED_OF_LIGHT=3*(10**8)

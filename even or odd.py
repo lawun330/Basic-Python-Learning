@@ -1,9 +1,7 @@
-#printing function for ease
+#printing function
 def Print(x,y):
-    print('even=',x)
-    print('\n')
-    print('odd=',y)
-
+    print('even=',x,'\t','odd=',y)
+    
 #method1 - even and odd separated by %(remainder)
 even=[]
 odd=[]

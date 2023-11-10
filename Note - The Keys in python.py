@@ -19,7 +19,7 @@ def func():
 ThisIsList=[mutable, overlapping, allowed, elements]
 Set={immutable, overlapping, unallowed elements}
 Tuple=(immutable, overlapping, allowed elements)
-TuplE='elements'
+Strings='elements'
 Dictionary={"key":"value"} mutable overlapping unallowed
 
 #@anything is called decorators

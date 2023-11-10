@@ -1,27 +1,27 @@
 #print prime numbers with range function, if, elif statements and break
-Prime=[2]
+#newbie code
+Prime=[]
 
 def prime():
-        x=1#x is initial, y is final, N is divided by previous Xs
-        y=int(input("To which number - "))
-        global u
-        u=y
-        for n in range(x,y): #this is not necessary
-                for a in range(2,n):
-                        if n%a==0:
+        n=int(input("Upper limit number - "))
+        global U #to use in both prime functions
+        U=n
+        Prime.append(2) #2 is a first prime 
+        for num in range(2,n): # to calculate each number between 2 to n
+                for a in range(2,num): #to find one number if it is prime
+                        if num%a==0:
                                 break
                         else:
-                                if a==n-1:
-                                        p=n
-                                        Prime.append(p)
+                                if a==num-1:
+                                        Prime.append(num)
         print('prime=',Prime)
 
 def check_prime():
         num=int(input("Check :"))
         if num in Prime:
-                print(num,"is in a prime")
+                print(num,"is in a prime.")
         elif num not in Prime:
-                print(num,"is not a prime")
+                print(num,"is not a prime.")
                         
 prime()
 check_prime()
@@ -45,5 +45,5 @@ def prime_generator(u):
                         yield num
                 num+=1
 
-j=list(prime_generator(u))
+j=list(prime_generator(U))
 print("prime=",j)

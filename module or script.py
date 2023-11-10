@@ -18,7 +18,7 @@ function1()
 #Useful when the file itself is script but to be able to be imported too
 
 if __name__=='__main__':
-	x=4  #x cannot be accessed through importing module or script.py
+	x=4  #x cannot be accessed through importing module from script.py
 	print('This is just script')
 
 ################

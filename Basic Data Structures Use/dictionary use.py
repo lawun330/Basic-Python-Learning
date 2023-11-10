@@ -38,8 +38,8 @@ print()
 
 #.get() function 
 print(x.get("1234"))  #can search for only key #Always return something (None) or AssignedWord
-print(x.get(None,"Replaced")) #if return is None, it is replaced by "ANY_TEXT" 
-print(x.get(True,"Replaced")) #if return is not None, it returns the actual value
+print(x.get("1234","Replaced_texts")) #if return is None, it is replaced by "ANY_TEXT" 
+print(x.get(True,"Replaced_texts")) #if return is not None, it returns the actual value
 
 print()
 
@@ -57,6 +57,8 @@ print(x.values())
 print()
 
 #get both
+print(x.items())
+#or
 for key, value in x.items():
 	print('{key} : {value},'.format(key=key,value=value),end=" ")
 print()
@@ -65,5 +67,5 @@ y = {'a' : 1, 'b' : 2}
 x.update(y) #add other_dictionary's key-value pairs #same as list.extend(other_list) in 'List functions.py'
 print(x,y)
 
-y.clear()
+y.clear()#clear the dictionary
 print(x,y)

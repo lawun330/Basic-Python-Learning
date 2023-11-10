@@ -1,5 +1,5 @@
-#say or examine something game
-#------------------------------
+#say or examine "zombie" game
+#----------------------------
 
 def get_input():
 	command = input (': ').split() #split the input strings into list
@@ -10,7 +10,7 @@ def get_input():
 	if verb_word in verb_dict:	#if allowed keys are used
 		verb=verb_dict[verb_word]
 		#dictionary[key]=function 
-		#verb is in fact,the function (eg- Say and examine as defined in line 37 & 61)
+		#verb is in fact,the function (eg- Say and examine as defined in line 39 & 62)
 
 	else :	#keywords not recognized ==> return NOT RECOGNIZED
 		print('NOT RECOGNIZED - "{}"\n'.format(sentence))
@@ -46,7 +46,7 @@ class Gameobj:
 	objects={}  #a dictionary
 
 	def __init__ (self,name):
-		self.name=name  #zombobo is name (line 59)
+		self.name=name  #zombobo is name (line 60)
 		Gameobj.objects[self.class_name]=self  # class_name is added as key to dictionary and value is self(instance)
 		#{"zombie": zombie}, in other words,{"zombie": Zombie('zombobo')} because self is replaced
 
@@ -72,7 +72,7 @@ while True:
 #---------------------
 #*** Flow ***
 #line 70 > 4 to 8 > if True > if arg 	> 20 > if say 	  > 20  > 39 > EXECUTED!!
-#								   		       if examine > 27 	> 62 > if True  > 48-50,56,60 > 53 >  EXECUTED!!
+#								   		       if examine > 26 	> 62 > if True  > 48-50,56,60 > 53 >  EXECUTED!!
 #																	 > if False > 66 > EXECUTED!!
 #						      if noArg	> 30 > if say 	  > 33	> EXECUTED!!
 #											   if examine > 36	> EXECUTED!!

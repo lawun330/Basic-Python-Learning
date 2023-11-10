@@ -9,17 +9,19 @@ for x in range(0,101):
 s=list(map(lambda x: x*x ,l)) #lambda is a function undefined #use as one use function
 #map maps the x and y in (x,y) where x=function() and y is any type of iterable .ie.for eg y=[] or y=()
 #list() lists the variables
-def Filter(): 		#filter function
-	global f
-	f=tuple(filter(lambda y: y%5==0,s)) #map is used with function and filter is used with equation
-	print(f)
+
+def Filter(): 		#filter function example
+	global f #variable 'f' can be used globally
+	f=tuple(filter(lambda y: y%5==0,s)) #map is used with function and filter is used with equation 
+	#map() use the iterables into function and filter() compares the true/false statement with iterables in equation, taking iterables that make 'true'
+	print('filtered=',f)
 
 def decorator(func):  #decorating function 
 	def wrap():
 		print("==================") #can be replace with any decorations
 		func()
 		print("==================")
-	return wrap
+	return wrap #this calls the function
 	
 def square():
 	print("0-50 square=",s)
@@ -61,16 +63,16 @@ def empty(): #this function has nothing aside from name
 #generator function #for prime numbers
 def is_prime(a):
 	for n in range(2,a):
-		if a%n==0: 
+		if a%n==0:  #divide the last number with previous numbers excluding the last number itself as a denominator because i/i=1 and i%i=0
 			return False
 		else: 
-			if n==a-1:
+			if n==a-1: 	#reaches the end and still the number is not divisible
 				return True
 
 def prime_generator(x):
 	num=2
 	yield 2
-	while num<x:
+	while num<x: #prime begins with 2
 		is_prime(num)
 		if is_prime(num)==True:
 			yield num 			#return the value to the function()
@@ -79,7 +81,7 @@ def prime_generator(x):
 		#yield don't delete the value, it doesn't stored values since beginning
 		num+=1
 
-j=list(prime_generator(100)) #that's why it has to be listed
+j=list(prime_generator(100)) #that's why it has to be listed #if not the values will be lost
 print('prime=',j)
 ##########################################################
 
@@ -89,9 +91,9 @@ def Factorial(z):
 	if z==1:  #base case (a base that doesn't need another call of function)
 		return 1
 	else:
-		return z*Factorial(z-1) #the function calls itself until z=1, when z=1, if statement(base case) is worked
-z=7
-print('{0}! ={1}'.format(z,Factorial(z)))
+		return z*Factorial(z-1) #the function calls itself until z=1 #when z=1, if statement(base case) is worked
+Z=7
+print('{0}! ={1}'.format(Z,Factorial(Z)))
 
 #recursion between two functions
 def is_even(x):
@@ -111,7 +113,7 @@ def is_odd(x):
 #NOT NOT NOT is_odd(0)
 #NOT NOT NOT NOT is_even(0) >> NOT (NOT (NOT (NOT True)))) >>True
 
-#odd to even - put NOT, even to odd - subtract one
+#odd to even - put NOT #even to odd - subtract one
 
 print(is_odd(3))
 ###########################################################
