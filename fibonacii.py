@@ -1,16 +1,13 @@
-#fibonacii sequence and heading(docstrings) under the defined function with one argument
-#list and return
+"""This script calculates the Fibonacii sequence up to 'n'.""" # this is called the docstrings (documentation strings)
 
-def fib(n):
-    """Fibonacii sequence up to n""" #this is docstrings or documentation strings
-    a,b=0,1
-    Set=[]
-    while a<n:
+def fibonacii(n):
+    a, b = 0, 1 # this is called tuple packing # this line is equal to two statements: a = 0; and b = 1;
+    Set = []
+    while a < n:
         Set.append(a)
-        a,b=b,a+b
-#The above line is meaning that a=b and b=a+b not 3 statments with commas
+        a, b = b, a+b # this line is equal to two statements: a = b; and b = a + b;
     return Set
 
-x=fib(100)
+# example
+x = fibonacii(100)
 print(x)
-
