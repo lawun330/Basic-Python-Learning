@@ -9,6 +9,6 @@ This repository is a reflection of my learning journey.
 - If the name of a file uses spaces instead of underscores, the file is written before I have gained basic Python knowledge.
 
 ## Changes With Edits
-- 2020 edit: I added some new files as I learned Python from the "**Google IT Automation With Python**" specialization on Coursera.
+- 2020 edit: I added some new files as I learned Python from the "**Google IT Automation with Python**" specialization on Coursera.
 - 2023 edit: I uploaded new files and modified old files to clarify the concepts better and delete unncessary comments.
 - 2024 edit: With my knowledge gained through experience, I rewrite scripts, rename files, and organize them by moving to corresponding directories. The process makes the repository more beginner friendly.
