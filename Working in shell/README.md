@@ -1,2 +1,4 @@
-The file contains some example scripts that can be used with the shell. 
-The codes are executed in Linux Ubuntu.
+# Python scripts for Linux Shell
+## from "Google IT Automation with Python" specialization
+
+The file contains a few scripts that can be executed within the shell of Linux Ubuntu. These files are useful for IT automation.
