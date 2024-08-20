@@ -1,4 +1,4 @@
-'''This script is not to be executed, but rather to be used as a reference for the Zen of Python and PEP8.'''
+'''This file is not to be executed, but rather to be used as a reference for the Zen of Python and PEP8.'''
 
 # PEP (Python Enhancement Proposals)
 # PEP 8 guide 

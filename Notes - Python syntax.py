@@ -1,4 +1,4 @@
-'''This script serves as a reference for Python syntax and is not intended to be executed.'''
+'''This file serves as a reference for Python syntax and is not intended to be executed.'''
 
 # anything after # is comment
 '''anything inside >>>"'<<< is documentation string or docstring'''
