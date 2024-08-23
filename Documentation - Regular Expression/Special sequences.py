@@ -1,4 +1,6 @@
-'''This script '''
+'''This script demonstrates the usage of special sequences in regular expressions using Python's re module.
+It covers various examples including backreferences, ASCII and Unicode sequences, and boundary matchers.
+Additionally, it provides practical examples such as email extraction and differentiating between \b and \B. '''
 
 import re
 
