@@ -57,6 +57,7 @@ print()
 
 # FUNCTION index()
 ## list.index(element)
+## similar to string.index(substring) in 'string.py'
 ## find the corresponding index of an element in a list
 print('Friday is at Days [', Days.index('Friday'), ']')
 print()
@@ -137,6 +138,7 @@ print()
 
 # SLICING A LIST
 ## similar to SLICING A TUPLE in 'tuple.py'
+## similar to SLICING A STRING in 'string.py'
 ## list_name[start : end+1 : increment] 
     ## if increment is -1 -> list is reversed
 ## -1 refers to the last index 

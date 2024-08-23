@@ -22,9 +22,9 @@ Common operations:
 ########################################################################################
 
 import random
-import string
+import string # import external module
 
-r = {3, 2, 5, 6} #create a set of r #similar to dictionary but don't have index
+r = {3, 2, 5, 6} # create a set of r # similar to dictionary but don't have index
 print('r =', r)
 
 # ADDING ELEMENTS TO A SET

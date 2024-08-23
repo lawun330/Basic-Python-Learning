@@ -44,6 +44,7 @@ print()
 
 # SLICING A TUPLE
 ## similar to SLICING A LIST in 'list.py'
+## similar to SLICING A STRING in 'string.py'
 ## tuple_name[start : end+1 : increment] 
     ## if increment is -1 -> tuple is reversed
 ## -1 refers to the last index
