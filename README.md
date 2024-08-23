@@ -11,4 +11,4 @@ This repository is a reflection of my learning journey.
 ## Changes With Edits
 - 2020 edit: I added some new files as I learned Python from the "**Google IT Automation with Python**" specialization on Coursera.
 - 2023 edit: I uploaded new files and modified old files to clarify the concepts better and delete unncessary comments.
-- 2024 edit: With my knowledge gained through experience, I rewrite scripts, rename files, and organize them by moving to corresponding directories. The process makes the repository more beginner friendly.
+- 2024 edit: With my knowledge gained through experience, I fixed scripts, renamed files, and organized them by moving to corresponding directories. The process made the repository more beginner friendly.
