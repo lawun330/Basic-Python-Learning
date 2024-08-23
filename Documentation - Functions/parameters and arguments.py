@@ -19,6 +19,7 @@ print()
 ###################################################
 
 # UNLIMITED (VARYING NUMBERS OF) PARAMETERS, *args
+## similar to tuple functionality in 'tuple.py'
 
 def func4(parameter1, *Xparameters):
 	print(parameter1, '+', Xparameters)
