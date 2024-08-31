@@ -1,5 +1,13 @@
-'''This script illustrates the use of itertools module.
-This module contains a set of fast, memory efficient tools that are useful by themselves or in combination.'''
+'''This educational script illustrates the use of the itertools module for efficient iteration.
+This module contains a set of fast, memory efficient tools that are useful by themselves or in combination.
+
+It covers:
+- Basic Functions -> (permutations, combinations, product, chain)
+- Infinite Iterators -> (count, cycle, repeat)
+- Iterator Utilities -> (zip_longest, takewhile, dropwhile, accumulate)
+
+This script serves as a practical guide for understanding and utilizing itertools for various iteration tasks in Python.
+'''
 
 
 import itertools as it
